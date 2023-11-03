@@ -212,4 +212,102 @@ console.log(`Los números impares ingresados fueron: ${arrayImpares}`);
 }
 leerNumeros();
 
+
+// 8. Leer n cantidad de sueldos de empleados y determinar el sueldo más bajo, imprimir los sueldos y el sueldo más bajo.
+
+let arraySueldo = [];
+const cantidad = parseInt(prompt('Por favor registre la cantidad de sueldos:'));
+for (let i = 1; i <= cantidad; i++) {
+    const sueldo = parseFloat(prompt(`Ingrese el sueldo No. ${i}:`));
+        arraySueldo.push(sueldo);            
+    }    
+    const sueldoBajo = Math.min(...arraySueldo);        
+    console.log("Los sueldos ingresados fueron:");
+    arraySueldo.forEach((sueldo, index) => {
+        console.log(`Empleado #${index + 1}: ${sueldo}`);
+});
+console.log(`El sueldo más bajo es de : ${sueldoBajo} pesos`);
+
+  
+// 9. Realizar un programa que pida la base, el exponente y se ejecute el cálculo sin uso de bibliotecas.
+
+const base = parseFloat(prompt('Por favor ingrese la base:'));
+const exponente = parseInt(prompt('Por favor ingrese el exponente:'));
+
+function calcularPotencia(base, exponente){
+let resultado = base ** exponente;
+return resultado;
+}
+const potencia = calcularPotencia(base, exponente);
+console.log(`El resultado de ${base} elevado a la ${exponente} es: ${potencia}`);
+
+
+// 10. Llenar un arreglo de tamaño n, y estos elementos sean 1 y 0 alternado e imprimir por consola.
+
+const arreglo = [];
+const n = parseInt(prompt("Ingrese el tamaño del arreglo:"));  
+ 
+  for (let i = 1; i < n; i++) {
+    arreglo.push(i % 2);
+  }
+  console.log(`El contenido del arreglo es: ${(arreglo)}`);
+
+
+// 11. Llenar un arreglo de tamaño n, este tamaño debe ser impar, y el contenido del arreglo deben ser los números pares partiendo de 2.
+
+const arreglo = [];
+let n = parseInt(prompt("Ingrese el tamaño del arreglo con un número impar:"));
+while (isNaN(n) || n % 2 === 0) {
+    n = parseInt(prompt("Por favor, ingrese un número impar para el tamaño del arreglo:"));
+}
+for (let i = 2; i <= n * 2; i += 2) {
+    arreglo.push(i);
+}
+console.log(`El contenido del arreglo es: ${(arreglo)}`);
+
+
+// 12. Llenar un arreglo con los primeros 100 números de la sucesión Fibonacci. 0,1,1,2,3,5,8,13…………….
+
+const arregloFibonacci = [0, 1];
+for (let i = 2; i < 100; i++) {
+    const fibonacci = arregloFibonacci[i - 1] + arregloFibonacci[i - 2];
+    arregloFibonacci.push(fibonacci);
+}
+console.log(`Los primeros 100 números de la sucesión Fibonacci son: 
+${(arregloFibonacci)}`);
+
+
+// 13. Llenar un arreglo con los primeros 100 números pares y muestre la suma de los elementos del arreglo.
+
+const arregloPares = [];
+let sumaPares = 0;
+for (let i = 2; i <= 100 * 2; i += 2) {
+    arregloPares.push(i);
+    sumaPares += i
+}
+console.log(`Los primeros 100 números pares son: 
+${(arregloPares)}`);
+console.log(`La suma de los primeros 100 números pares es: 
+${sumaPares}`);
+
+
+// 14. Llenar un arreglo de tamaño n que se llene con números ingresados por el usuario y determine cantidad de positivos y negativos.
+
+const arregloPositivo = [];
+const arregloNegativo = [];
+let tamaño = parseInt(prompt("Ingrese el tamaño del arreglo:"));
+for (let i = 1; i <= tamaño; i++) {
+    let llenar = parseInt(prompt("Por favor ingrese el número "+i+":"));
+    while(isNaN(llenar) || llenar == 0){
+        llenar = parseInt(prompt("El número 0 no es un número establecido entre los positivos y negativos"));
+    }
+    if (llenar > 0) {
+        arregloPositivo.push(i);
+    } else{
+        arregloNegativo.push(i);
+    }
+}
+console.log(`La cantidad de números positivos son: ${arregloPositivo.length}`)
+console.log(`La cantidad de números negativos son: ${arregloNegativo.length}`)
+
 */
